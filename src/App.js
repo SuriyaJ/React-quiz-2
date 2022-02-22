@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Quiz from './components/quizpage';
+import ReactDOM from 'react-dom';
+import React from 'react';
+
 
 function App() {
+  const entertoquiz = () => {
+    document.querySelector(".App").innerHTML = ""
+    ReactDOM.render(
+      <React.Fragment>
+        <div className="quizboard"><Quiz /></div>,
+
+      </React.Fragment>,
+      document.querySelector(".App"))
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Quiz App</h1>
+      <button className="play" onClick={entertoquiz}>Play</button>
     </div>
   );
 }
